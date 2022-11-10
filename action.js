@@ -18,7 +18,7 @@ module.exports = class {
     const { comment } = this.argv
 
     console.log(`Adding comment to ${issueId}: \n${comment}`)
-    await this.Jira.addComment(issueId, { body: comment })
+    await this.Jira.addComment(issueId, { body: JSON.parse(comment) })
 
     return {}
   }
